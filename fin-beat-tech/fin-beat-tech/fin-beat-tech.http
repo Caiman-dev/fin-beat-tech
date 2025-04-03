@@ -1,0 +1,6 @@
+@fin_beat_tech_HostAddress = http://localhost:5249
+
+GET {{fin_beat_tech_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
