@@ -1,21 +1,21 @@
-import { useState } from "react";
-import { Button, TextField, Box } from "@mui/material";
-import { getData } from "../../api/ApiService";
-import { DataItem } from "../../types/DataItem";
-import DataTable from "../DataTable";
+import { useState } from "react"
+import { Button, TextField, Box } from "@mui/material"
+import { getData } from "../../api/ApiService"
+import { DataItem } from "../../types/DataItem"
+import DataTable from "../DataTable"
 
 const GetDataList = () => {
-	const [code, setCode] = useState<string>("");
-	const [data, setData] = useState<DataItem[]>([]);
+	const [code, setCode] = useState<string>("")
+	const [data, setData] = useState<DataItem[]>([])
 
 	const handleLoadData = async () => {
 		try {
-			const response = await getData(code);
-			setData(response.data);
+			const response = await getData(code)
+			setData(response.data)
 		} catch (err: any) {
-			alert("Ошибка: " + err.message);
+			alert("Ошибка: " + err.message)
 		}
-	};
+	}
 
 	return (
 		<Box>
@@ -30,7 +30,7 @@ const GetDataList = () => {
 
 			{data.length != 0 && <DataTable Data={data} />}
 		</Box>
-	);
-};
+	)
+}
 
-export default GetDataList;
+export default GetDataList

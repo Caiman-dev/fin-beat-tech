@@ -1,7 +1,7 @@
-import { Accordion, AccordionDetails, AccordionSummary, Container, Typography } from "@mui/material";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import DataForm from "./components/Forms/PostDataForm";
-import DataList from "./components/Forms/GetDataForm";
+import { Accordion, AccordionDetails, AccordionSummary, Container, Typography } from "@mui/material"
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import DataForm from "./components/Forms/PostDataForm"
+import DataList from "./components/Forms/GetDataForm"
 
 const App = () => {
   return (
@@ -33,7 +33,7 @@ const App = () => {
       </Accordion>
 
     </Container>
-  );
-};
+  )
+}
 
 export default App

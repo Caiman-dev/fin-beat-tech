@@ -1,22 +1,22 @@
-import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import FirstPageIcon from '@mui/icons-material/FirstPage';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import LastPageIcon from '@mui/icons-material/LastPage';
+import * as React from 'react'
+import { useTheme } from '@mui/material/styles'
+import Box from '@mui/material/Box'
+import IconButton from '@mui/material/IconButton'
+import FirstPageIcon from '@mui/icons-material/FirstPage'
+import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft'
+import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight'
+import LastPageIcon from '@mui/icons-material/LastPage'
 
 interface TablePaginationActionsProps {
-	count: number;
-	page: number;
-	rowsPerPage: number;
+	count: number
+	page: number
+	rowsPerPage: number
 	onPageChange: (event: React.MouseEvent<HTMLButtonElement>, newPage: number) => void
 }
 
 function TablePaginationActions(props: TablePaginationActionsProps) {
-	const theme = useTheme();
-	const { count, page, rowsPerPage, onPageChange } = props;
+	const theme = useTheme()
+	const { count, page, rowsPerPage, onPageChange } = props
 
 	const handleFirstPageButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => onPageChange(event, 0)
 	const handleBackButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => onPageChange(event, page - 1)
@@ -54,7 +54,7 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
 				{theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
 			</IconButton>
 		</Box>
-	);
+	)
 }
 
 export default TablePaginationActions

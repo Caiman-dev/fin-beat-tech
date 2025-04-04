@@ -1,31 +1,31 @@
-import { useState } from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import { DataItem } from '../types/DataItem';
-import { Box, TableFooter, TablePagination } from '@mui/material';
-import TablePaginationActions from './TablePaginationActions';
+import { useState } from 'react'
+import Table from '@mui/material/Table'
+import TableBody from '@mui/material/TableBody'
+import TableCell from '@mui/material/TableCell'
+import TableContainer from '@mui/material/TableContainer'
+import TableHead from '@mui/material/TableHead'
+import TableRow from '@mui/material/TableRow'
+import Paper from '@mui/material/Paper'
+import { DataItem } from '../types/DataItem'
+import { Box, TableFooter, TablePagination } from '@mui/material'
+import TablePaginationActions from './TablePaginationActions'
 
 type DataProps = {
 	Data: DataItem[]
 }
 
 const DataTable = ({ Data }: DataProps) => {
-	const [page, setPage] = useState(0);
-	const [rowsPerPage, setRowsPerPage] = useState(5);
+	const [page, setPage] = useState(0)
+	const [rowsPerPage, setRowsPerPage] = useState(5)
 
-	const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - Data.length) : 0;
+	const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - Data.length) : 0
 
 	const handleChangePage = (event: React.MouseEvent<HTMLButtonElement> | null, newPage: number) => setPage(newPage)
 
 	const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-		setRowsPerPage(parseInt(event.target.value, 10));
-		setPage(0);
-	};
+		setRowsPerPage(parseInt(event.target.value, 10))
+		setPage(0)
+	}
 
 	return (<Box mt={2}>
 		<TableContainer component={Paper}>
@@ -82,7 +82,7 @@ const DataTable = ({ Data }: DataProps) => {
 			</Table>
 		</TableContainer>
 	</Box>
-	);
+	)
 }
 
 export default DataTable
