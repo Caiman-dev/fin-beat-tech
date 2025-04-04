@@ -21,7 +21,7 @@ namespace fin_beat_tech.Controllers
         public async Task<IActionResult> SaveData([FromBody] List<Dictionary<string, string>> json)
         {
             if (json == null)
-                return BadRequest("JSON is null");
+                return BadRequest("JSON = null");
 
             try
             {
@@ -31,7 +31,7 @@ namespace fin_beat_tech.Controllers
                     .SelectMany(dict => dict.Select(kvp =>
                     {
                         if (!int.TryParse(kvp.Key, out var key))
-                            throw new FormatException($"Unable to parse key: '{kvp.Key}'");
+                            throw new FormatException($"Невозможно преобразовать тип ключа к int: '{kvp.Key}'");
 
                         return new DataItem
                         {
@@ -45,7 +45,7 @@ namespace fin_beat_tech.Controllers
                 await _context.DataItems.AddRangeAsync(items);
                 await _context.SaveChangesAsync();
 
-                return Ok("Data saved successfully");
+                return Ok("Данные успешно сохранены!");
             }
             catch (Exception ex)
             {
