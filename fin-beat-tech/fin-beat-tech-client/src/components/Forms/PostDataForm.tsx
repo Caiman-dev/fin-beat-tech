@@ -18,6 +18,28 @@ const PostDataForm = () => {
 
 	return (
 		<Box display="flex" flexDirection={"column"} alignItems="flex-start" gap={1}>
+			<Box
+				component="pre"
+				sx={{
+					backgroundColor: "#292d3e",
+					color: "white",
+					padding: 2,
+					borderRadius: 2,
+					fontFamily: "monospace",
+					whiteSpace: "pre-wrap",
+					overflowX: "auto"
+				}}
+			>
+				<Typography component="code">
+					{`Пример JSON:
+[
+  { "1": "value1" },
+  { "1": "value2" },
+  { "5": "value3" }
+]`}
+				</Typography>
+			</Box>
+
 			<TextField
 				fullWidth
 				multiline
